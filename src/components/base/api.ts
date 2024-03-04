@@ -14,7 +14,7 @@ export class Api {
         this.options = {
             headers: {
                 'Content-Type': 'application/json',
-                ...(options.headers as object ?? {})
+                ...(options?.headers as object ?? {})
             }
         };
     }
