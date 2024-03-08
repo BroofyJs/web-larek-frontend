@@ -1,15 +1,18 @@
 export interface IOrderForm {
-  payment: string;
-  address: string;
+	payment: string;
+	address: string;
 }
 
 export interface IContactForm {
-  phone: string;
-  email: string;
+	phone: string;
+	email: string;
 }
 
-export interface IOrder extends IOrderForm, IContactForm {
-  items: string[]
+export interface IOrderFieldData extends IOrderForm, IContactForm {}
+
+export interface IOrder extends IOrderFieldData {
+	items: string[];
+	total: number;
 }
 
 export interface IOrderResult {
@@ -19,8 +22,6 @@ export interface IOrderResult {
 
 export interface IBasket {
 	items: Map<string, number>;
-	add(id: string): void;
-	remove(id: string): void;
 }
 
 export interface IBasketItemView {
@@ -30,22 +31,30 @@ export interface IBasketItemView {
 }
 
 export interface ICatalogItem {
-  _index: HTMLElement;
-  _title: HTMLElement;
-  _description: HTMLElement;
-  _category: HTMLElement;
-  _price: HTMLElement;
-  _image: HTMLElement;
-  _button: HTMLElement;
-  _buttonTitle: HTMLElement;
-  _status: HTMLElement;
+	_index: HTMLElement;
+	_title: HTMLElement;
+	_description: HTMLElement;
+	_category: HTMLElement;
+	_price: HTMLElement;
+	_image: HTMLElement;
+	_button: HTMLElement;
+	_buttonTitle: HTMLElement;
+	_status: HTMLElement;
 }
 
 export interface IProduct {
-  id: string
-  title: string
-  description: string
-  price: number | null
-  category: string
-  image: string
+	id: string;
+	title: string;
+	description: string;
+	price: number | null;
+	category: string;
+	image: string;
+}
+
+export interface IBasketItem extends IProduct {
+	index: number;
+}
+
+export interface IActions {
+	click?: (e: Event) => void;
 }

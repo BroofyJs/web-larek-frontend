@@ -1,0 +1,15 @@
+export enum Events {
+    BASKET_OPEN = 'basket:open',
+    BASKET_CHANGED = 'basket:changed',
+    CATALOG_CHANGED = 'catalog:changed',
+    MODAL_OPEN = 'modal:open',
+    MODAL_CLOSE = 'modal:close',
+    PRODUCT_SELECT = 'product:select',
+    PREVIEW_CHANGED = 'preview:changed',
+    BASKET_ADD = 'basket:add',
+    BASKET_REMOVE = 'basket:remove',
+    ORDER_OPEN = 'order:open',
+    ORDER_SUBMIT = 'order:submit',
+    FORMERRORS_CHANGE = 'form.errors:change',
+    CONTACTS_SUBMIT = 'contacts:submit',
+}

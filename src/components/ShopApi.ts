@@ -1,21 +1,32 @@
 import { IProduct, IOrder, IOrderResult } from '../types';
-import { Api } from './base/api';
-
+import { Api, ApiListResponse } from './base/api';
 
 export class ShopAPI extends Api {
-	constructor(baseUrl: string, options: RequestInit = {}) {
+	constructor(
+		baseUrl: string,
+		protected cdnUrl: string,
+		options: RequestInit = {}
+	) {
 		super(baseUrl, options);
 	}
 
 	getProductList(): Promise<IProduct[]> {
-		return new Promise(() => {});
+		return this.get('/product').then((data: ApiListResponse<IProduct>) =>
+			data.items.map((item) => ({
+				...item,
+				image: `${this.cdnUrl}${item.image}`,
+			}))
+		);
 	}
 
 	getProduct(id: string): Promise<IProduct> {
-		return new Promise(() => {});
+		return this.get(`/product/${id}`).then((data: IProduct) => ({
+			...data,
+			image: `${this.cdnUrl}${data.image}`,
+		}));
 	}
 
 	setOrder(order: IOrder): Promise<IOrderResult> {
-		return new Promise(() => {});
+		return this.post('/order', order).then((data: IOrderResult) => data);
 	}
 }

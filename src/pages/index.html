@@ -28,7 +28,7 @@
 			</div>
 		</header>
 
-		<main class="gallery"></main>
+		<main class="gallery catalog__items"></main>
 	</div>
 
 	<div class="modal" id="modal-container">
@@ -47,7 +47,7 @@
 				<div class="card card_full">
 					<img class="card__image" src="<%=require('../images/Subtract.svg')%>" alt="" />
 					<div class="card__column">
-						<span class="card__category card__category_other">другое</span>
+						<span class="card__category">другое</span>
 						<h2 class="card__title">Бэкенд-антистресс</h2>
 						<p class="card__text">Если планируете решать задачи в тренажёре, берите два.</p>
 						<div class="card__row">
@@ -149,8 +149,8 @@
 			<button class="modal__close" aria-label="закрыть"></button>
 			<div class="modal__content">
 				<div class="order-success">
-					<h2 class="film__title">Заказ оформлен</h2>
-					<p class="film__description">Списано 153 250 синапсов</p>
+					<h2 class="order-success__title">Заказ оформлен</h2>
+					<p class="order-success__description">Списано 153 250 синапсов</p>
 					<button class="button order-success__close">За новыми покупками!</button>
 				</div>
 			</div>
@@ -166,7 +166,7 @@
 	</template>
 
 	<template id="card-catalog">
-		<button class="gallery__item card">
+		<button class="gallery__item card card__button">
 			<span class="card__category card__category_soft">софт-скил</span>
 			<h2 class="card__title">+1 час в сутках</h2>
 			<img class="card__image" src="<%=require('../images/Subtract.svg')%>" alt="" />
@@ -191,10 +191,10 @@
 
 	<template id="card-basket">
 		<li class="basket__item card card_compact">
-			<span class="basket__item-index">1</span>
-			<span class="card__title">Фреймворк куки судьбы</span>
-			<span class="card__price">2500 синапсов</span>
-			<button class="basket__item-delete card__button" aria-label="удалить"></button>
+			<span class="basket-item__index basket__item-index">1</span>
+			<span class="card__title basket-item__title">Фреймворк куки судьбы</span>
+			<span class="card__price basket-item__price">2500 синапсов</span>
+			<button class="basket-item__button basket__item-delete card__button" aria-label="удалить"></button>
 		</li>
 	</template>
 
@@ -203,7 +203,7 @@
 			<h2 class="modal__title">Корзина</h2>
 			<ul class="basket__list"></ul>
 			<div class="modal__actions">
-				<button class="button basket__button">Оформить</button>
+				<button class="button basket__button basket__action">Оформить</button>
 				<span class="basket__price">0 синапсов</span>
 			</div>
 		</div>
