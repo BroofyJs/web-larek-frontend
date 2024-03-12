@@ -3,7 +3,7 @@ import { Events } from '../../types/events';
 import { ensureElement, createElement, formatter } from '../../utils/utils';
 import { Card } from './Card';
 import { Component } from '../base/Component';
-import { IEvents } from '../base/events';
+import { IEvents } from '../base/Events';
 
 export class Basket extends Component<IBasket> {
 	protected _list: HTMLElement;

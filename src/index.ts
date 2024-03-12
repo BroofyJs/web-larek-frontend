@@ -1,17 +1,17 @@
 import './scss/styles.scss';
 import { ShopAPI } from './components/ShopApi';
-import { EventEmitter } from './components/base/events';
+import { EventEmitter } from './components/base/Events';
 import { AppState } from './components/models/AppState';
 import { Page } from './components/common/Page';
 import { Modal } from './components/common/Modal';
 import { Basket, BasketItem } from './components/common/Basket';
-import { OrderForm, ContactForm } from './components/common/Order';
+import { OrderForm, ContactForm } from './components/Order';
 import { ensureElement, cloneTemplate } from './utils/utils';
 import { API_URL, CDN_URL } from './utils/constants';
-import { CatalogItem } from './components/common/CatalogItem';
+import { CatalogItem } from './components/CatalogItem';
 import { IOrderFieldData, IProduct } from './types';
 import { Events } from './types/events';
-import { ProductView } from './components/common/ProductView';
+import { ProductView } from './components/ProductView';
 import { Success } from './components/common/Success';
 
 const catalogItemTemplate = ensureElement<HTMLTemplateElement>('#card-catalog');

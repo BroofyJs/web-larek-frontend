@@ -1,8 +1,8 @@
 import { Component } from '../base/Component';
 import { bem, ensureElement, formatter } from '../../utils/utils';
-import { IActions } from '../../types';
+import { IActions, IProduct } from '../../types';
 
-enum categoryClassMapper {
+enum CategoryClassMapper {
 	'софт-скил' = 'soft',
 	'другое' = 'other',
 	'дополнительное' = 'additional',
@@ -58,12 +58,12 @@ export class Card<T> extends Component<T> {
 		const categoryClass = bem(
 			this.blockName,
 			'category',
-			categoryClassMapper[value as keyof typeof categoryClassMapper]
+			CategoryClassMapper[value as keyof typeof CategoryClassMapper]
 		);
 		this._category?.classList.add(categoryClass.name);
 	}
 
 	set image(value: string) {
-		this.setImage(this._image, value);
+		this.setImage(this._image, value, this._title.textContent);
 	}
 }

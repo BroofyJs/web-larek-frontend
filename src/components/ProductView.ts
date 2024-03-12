@@ -1,6 +1,6 @@
-import { Card } from './Card';
-import { IProduct, IActions } from '../../types';
-import { ensureElement } from '../../utils/utils';
+import { Card } from './common/Card';
+import { IProduct, IActions } from '../types';
+import { ensureElement } from '../utils/utils';
 
 export class ProductView extends Card<IProduct> {
 	protected _description: HTMLElement;

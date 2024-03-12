@@ -1,6 +1,6 @@
 import { IOrder, IProduct, IOrderFieldData } from '../../types';
 import { Model } from '../base/Model';
-import { IEvents } from '../base/events';
+import { IEvents } from '../base/Events';
 import { Events } from '../../types/events';
 
 export type FormErrors = Partial<Record<keyof IOrderFieldData, string>>;

@@ -1,7 +1,7 @@
-import { IOrderForm, IContactForm } from '../../types';
-import { ensureElement } from '../../utils/utils';
-import { Form } from '../base//Form';
-import { IEvents } from '../base/events';
+import { IOrderForm, IContactForm } from '../types';
+import { ensureElement } from '../utils/utils';
+import { Form } from './common/Form';
+import { IEvents } from './base/Events';
 
 export type PaymentType = 'cash' | 'card';
 
